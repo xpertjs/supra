@@ -1,26 +1,93 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* 1. Define theme variables directly on root and data-theme selectors */
+:root,
+body[data-theme="light"] {
+  --color-primary-100: #c9d1ca;
+  --color-primary-500: #8EBB92;
+  --color-primary-900: #314032;
+
+  --color-secondary-100: #f3e5f5;
+  --color-secondary-500: #7b1fa2;
+  --color-secondary-900: #4a148c;
+
+  --color-accent-100: #fff3e0;
+  --color-accent-500: #e65100;
+  --color-accent-900: #bf360c;
+
+  --color-tertiary-100: #e0f2f1;
+  --color-tertiary-500: #00796b;
+  --color-tertiary-900: #004d40;
+
+  --color-surface-100: #ffffff;
+  --color-surface-500: #e2e8f0;
+  --color-surface-900: #1e293b;
+
+  --color-on-surface-100: #0b0e0b;
+  --color-on-surface-500: #adc0af;
+  --color-on-surface-900: #314032;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+body[data-theme="dark"] {
+  --color-primary-100: #314032;
+  --color-primary-500: #8EBB92;
+  --color-primary-900: #c9d1ca;
+
+  --color-secondary-100: #3b0764;
+  --color-secondary-500: #a855f7;
+  --color-secondary-900: #f3e5f5;
+
+  --color-accent-100: #431407;
+  --color-accent-500: #f97316;
+  --color-accent-900: #fff3e0;
+
+  --color-tertiary-100: #042f2e;
+  --color-tertiary-500: #14b8a6;
+  --color-tertiary-900: #e0f2f1;
+
+  --color-surface-100: #0b0e0b;
+  --color-surface-500: #adc0af;
+  --color-surface-900: #314032;
+
+  --color-on-surface-100: #e2efe3;
+  --color-on-surface-500: #cbd5e1;
+  --color-on-surface-900: #64748b;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* 2. Bind theme namespace for Tailwind CSS v4 utility generation */
+@theme {
+  --color-primary-100: var(--color-primary-100);
+  --color-primary-500: var(--color-primary-500);
+  --color-primary-900: var(--color-primary-900);
+
+  --color-secondary-100: var(--color-secondary-100);
+  --color-secondary-500: var(--color-secondary-500);
+  --color-secondary-900: var(--color-secondary-900);
+
+  --color-accent-100: var(--color-accent-100);
+  --color-accent-500: var(--color-accent-500);
+  --color-accent-900: var(--color-accent-900);
+
+  --color-tertiary-100: var(--color-tertiary-100);
+  --color-tertiary-500: var(--color-tertiary-500);
+  --color-tertiary-900: var(--color-tertiary-900);
+
+  --color-surface-100: var(--color-surface-100);
+  --color-surface-500: var(--color-surface-500);
+  --color-surface-900: var(--color-surface-900);
+
+  --color-on-surface-100: var(--color-on-surface-100);
+  --color-on-surface-500: var(--color-on-surface-500);
+  --color-on-surface-900: var(--color-on-surface-900);
+
+
+  --font-sans: var(--font-sans), system-ui, sans-serif;
+  --font-serif: var(--font-serif), Georgia, serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-surface-100);
+  color: var(--color-on-surface-100);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: var(--font-sans);
 }
