@@ -4,7 +4,7 @@
 :root,
 body[data-theme="light"] {
   --color-primary-100: #c9d1ca;
-  --color-primary-500: #8EBB92;
+  --color-primary-500: #edc237;
   --color-primary-900: #314032;
 
   --color-secondary-100: #f3e5f5;
@@ -30,7 +30,7 @@ body[data-theme="light"] {
 
 body[data-theme="dark"] {
   --color-primary-100: #314032;
-  --color-primary-500: #8EBB92;
+  --color-primary-500: #edc237;
   --color-primary-900: #c9d1ca;
 
   --color-secondary-100: #3b0764;
